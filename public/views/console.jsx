@@ -132,8 +132,13 @@ var AppEditForm = React.createClass({
     console.log('lets modify this application ' + this.props.appID);
   },
   render: function(){
+    var url = "/console/details";
+    var query = "?appId=" + this.props.appID;
     return(
-      <button onClick={this.handleClikEditApp} className="btnEditdarApp">edit</button>
+      <div>
+        <button onClick={this.handleClikEditApp} className="btnEditdarApp">edit</button>
+        <a href={url + query}>Details</a>
+      </div>
     );
   }
 });
