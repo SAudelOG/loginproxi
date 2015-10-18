@@ -38,13 +38,12 @@ module.exports = function(app){
   //applications
   app.get( '/console', function( req, res ){
     res.render( req.url, {
-      title : 'developer console',
-      organization : 'Volcanosis'
+      title : 'developer console'
     });
   });
 
   app.get( '/console/app/:appID' ,function( req, res ){
-    
+
     var appID = req.params.appID;
 
     Application.find( { IsActive : true, _id : appID }, function( err, applications ){
@@ -63,6 +62,7 @@ module.exports = function(app){
             publicKey : application.PublicKey
           }))
         };
+        context.title = context.applications[0].appName;
         //finally
         res.render( req.url, context );
       }
@@ -70,8 +70,6 @@ module.exports = function(app){
   });
 
   //method to create applications
-  //TODO:add missing properties on data model
-  //when app is created like appid etc
   app.post( '/Application', function( req, res ){
     if ( !req.xhr ) return;
 

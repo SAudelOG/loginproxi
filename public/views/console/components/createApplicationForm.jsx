@@ -2,8 +2,6 @@
 
 //libs
 var $ = require( "jquery" );
-var _ = require( "underscore" );
-
 var React = require( "react" );
 
 //React componet to create new application
