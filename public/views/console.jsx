@@ -90,9 +90,6 @@ var AppList = React.createClass({
     );
   }
 });
-<<<<<<< HEAD
-
-=======
 var AppEditForm = React.createClass({
   handleClikEditApp: function(){
     console.log('lets modify this application ' + this.props.appID);
@@ -108,10 +105,8 @@ var AppEditForm = React.createClass({
     );
   }
 });
->>>>>>> details
 var App = React.createClass({
   handleDetailClick: function(){
-    console.log(this.props.appID);
     window.location = "/console/app/" + this.props.appID;
   },
   componentDidUpdate: function(){
