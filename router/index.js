@@ -44,7 +44,7 @@ module.exports = function(app){
   });
 
   app.get( '/console/app/:appID' ,function( req, res ){
-
+    
     var appID = req.params.appID;
 
     Application.find( { IsActive : true, _id : appID }, function( err, applications ){
@@ -54,16 +54,14 @@ module.exports = function(app){
         })
       } else {
         var context = {
-          applications : applications.map( function( application ){
-            return {
-              data : true,
-              appID : application._id,
-              appName : application.AppName,
-              domain : application.Domain,
-              privateKey : application.PrivateKey,
-              publicKey : application.PublicKey
-            };
-          })
+          applications : applications.map( application => ({
+            data : true,
+            appID : application._id,
+            appName : application.AppName,
+            domain : application.Domain,
+            privateKey : application.PrivateKey,
+            publicKey : application.PublicKey
+          }))
         };
         //finally
         res.render( req.url, context );
