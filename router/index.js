@@ -49,7 +49,8 @@ module.exports = function(app){
     Application.find( { IsActive : true, _id : appID }, function( err, applications ){
       if ( err ){
          res.render( req.url,{
-          data : false
+           title : "no data",
+           data : false
         })
       } else {
         var context = {

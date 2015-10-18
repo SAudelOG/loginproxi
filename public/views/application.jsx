@@ -14,7 +14,7 @@ module.exports = React.createClass({
     var data = this.props.applications;
     var showApplication;
     var noData = "No data";
-    if ( data === undefined ){
+    if ( typeof data === "undefined" ){
       showApplication = false;
     } else {
       showApplication = true;
