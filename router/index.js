@@ -109,15 +109,13 @@ module.exports = function(app){
   app.get( '/Applications', function( req, res ){
     Application.find( { IsActive : true }, function( err, applications ){
       var context = {
-        applications:applications.map( function( application ){
-          return{
+        applications : applications.map(application => ({
             appID : application._id,
             appName : application.AppName,
             domain : application.Domain,
             privateKey : application.PrivateKey,
             publicKey : application.PublicKey
-          };
-        })
+          }))
       };
       return res.json( context );
     })
