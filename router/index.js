@@ -128,6 +128,15 @@ module.exports = function(app){
     })
   })
 
+  app.get('/console/details', function(req, res){
+    if (!req.query.appId) return res.redirect(303, '/console');
+
+    var appId = req.query.appId;
+
+    res.render(req.url,{appId: appId});
+
+  });
+
  //check 500 err
   app.get('/fail', function(req, res){
     throw new Error('internal server error!');

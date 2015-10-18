@@ -90,7 +90,25 @@ var AppList = React.createClass({
     );
   }
 });
+<<<<<<< HEAD
 
+=======
+var AppEditForm = React.createClass({
+  handleClikEditApp: function(){
+    console.log('lets modify this application ' + this.props.appID);
+  },
+  render: function(){
+    var url = "/console/details";
+    var query = "?appId=" + this.props.appID;
+    return(
+      <div>
+        <button onClick={this.handleClikEditApp} className="btnEditdarApp">edit</button>
+        <a href={url + query}>Details</a>
+      </div>
+    );
+  }
+});
+>>>>>>> details
 var App = React.createClass({
   handleDetailClick: function(){
     console.log(this.props.appID);

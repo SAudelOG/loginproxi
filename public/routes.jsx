@@ -11,7 +11,7 @@ var Application = require( './views/application.jsx' );
 var routes = (
   <Router.Route path = "/" handler = {Loginproxy}>
     <Router.Route path = "console" handler = {Console} />
-    <Router.Route path = "console/app/:appID" handler = {Application} />    
+    <Router.Route path = "console/app/:appID" handler = {Application} />
     <Router.Route path = "team" handler = {Team} />
   </Router.Route>
 );
