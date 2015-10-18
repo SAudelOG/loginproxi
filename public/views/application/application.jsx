@@ -1,8 +1,6 @@
 'use strict';
 
 //libs
-var $ = require('jquery');
-var _ = require('underscore');
 var React = require('react');
 
 

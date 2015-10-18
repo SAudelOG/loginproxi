@@ -6,7 +6,7 @@ var Router = require( 'react-router' );
 var Loginproxy = require( './views/loginproxy.jsx' );
 var Console = require( './views/console/console.jsx' );
 var Team = require( './views/team.jsx' );
-var Application = require( './views/application.jsx' );
+var Application = require( './views/application/application.jsx' );
 
 var routes = (
   <Router.Route path = "/" handler = {Loginproxy}>
